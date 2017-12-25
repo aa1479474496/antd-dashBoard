@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Popover, Icon } from 'antd';
+// import PropTypes from 'prop-types';
+// import { Popover, Icon } from 'antd';
 import Menus from './Menus';
 import styles from './index.less';
 

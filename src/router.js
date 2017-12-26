@@ -1,20 +1,39 @@
 import React from 'react';
-import { Router, Route, Switch } from 'dva/router';
+import { Route, Switch, Redirect, routerRedux } from 'dva/router';
 import IndexPage from './routes/IndexPage';
 import App from './routes/App';
 import DashBoard from './routes/dashboard';
-// import Test from './components/TestLink';
+import Users from './routes/users';
+
+const { ConnectedRouter } = routerRedux;
+
+// function RouterConfig({ history }) {
+//   return (
+//     <ConnectedRouter history={history}>
+//       <Switch>
+//         <Route path="/" exact component={IndexPage} />
+//         <App>
+//           <Route exact path="/app" render={() => (<Redirect to="/dashboard" />)} />
+//           <Route path="/dashboard" exact component={DashBoard} />
+//           <Route path="/users" exact component={Users} />
+//         </App>
+//       </Switch>
+//     </ConnectedRouter>
+//   );
+// }
 
 function RouterConfig({ history }) {
   return (
-    <Router history={history}>
+    <ConnectedRouter history={history}>
       <Switch>
         <Route path="/" exact component={IndexPage} />
         <App>
+          <Route exact path="/app" render={() => (<Redirect to="/dashboard" />)} />
           <Route path="/dashboard" exact component={DashBoard} />
+          <Route path="/users" exact component={Users} />
         </App>
       </Switch>
-    </Router>
+    </ConnectedRouter>
   );
 }
 

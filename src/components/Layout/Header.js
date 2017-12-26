@@ -19,7 +19,6 @@ const Header = ({ isNavbar, siderFold, switchSider }) => {
   };
 
   return (
-    // <div className={`${styles.header} aa`}>
     <div className={cs(styles.header, { aa: isNavbar })}>
       {isNavbar
         ? <Popover placement="topLeft" overlayClassName={styles.popovermenu} content={<Menus {...menuProps} />} trigger="click">

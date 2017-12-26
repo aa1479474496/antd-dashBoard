@@ -5,6 +5,12 @@
   -webkit-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+  &.fold {
+    margin-left: 80px;
+  }
+  &.withnavbar {
+    margin-left: 0;
+  }
 }
 
 .header {
@@ -48,29 +54,69 @@
   -webkit-box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.01);
   box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.01);
   color: #999;
+
+  .logo {
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    margin: 28px 0;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    overflow: hidden;
+
+    img {
+      width: 40px;
+      margin-right: 8px;
+      -webkit-transition: all 0.3s ease-out;
+      -o-transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out;
+      vertical-align: unset;
+    }
+
+    span {
+      vertical-align: text-bottom;
+      font-size: 16px;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+  }
+
+  &.fold {
+    width: 80px;
+
+    .logo{
+      img {
+        width: 28px;
+        height: 28px;
+        margin: 6px 7px;
+      }
+    }
+    
+  }
 }
-.logo {
-  text-align: center;
-  height: 40px;
-  line-height: 40px;
-  cursor: pointer;
-  margin: 28px 0;
-  -webkit-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-  overflow: hidden;
+
+.ant-menu-vertical {
+  border-right: 0!important;
 }
-.logo img {
-  width: 40px;
-  margin-right: 8px;
-  -webkit-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-  vertical-align: unset;
-}
-.logo span {
-  vertical-align: text-bottom;
-  font-size: 16px;
-  text-transform: uppercase;
-  display: inline-block;
+.popovermenu {
+  width: 280px;
+  margin-left: 6px;
+
+  :global .ant-popover-inner-content {
+    padding: 0;
+
+    .ant-menu-inline .ant-menu-item,
+    .ant-menu-vertical .ant-menu-item {
+      border-right: 0;
+      height: 48px;
+      line-height: 48px;
+    }
+
+    .ant-menu-inline .ant-menu-item-selected,
+    .ant-menu-inline .ant-menu-selected {
+      border-right: 0;
+    }
+  }
 }

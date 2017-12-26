@@ -1,5 +1,6 @@
 /* global window */
 /* global document */
+/* global alert */
 
 export default {
   namespace: 'layout',

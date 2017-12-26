@@ -1,18 +1,21 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 // import { Popover, Icon } from 'antd';
+import cs from 'classnames';
 import Menus from './Menus';
 import styles from './index.less';
 
-const Sider = () => {
+const Sider = ({ siderFold }) => {
+  const menuProps = {
+    siderFold,
+  };
   return (
-    <div className={styles.sider}>
+    <div className={cs(styles.sider, { [styles.fold]: siderFold })}>
       <div className={styles.logo}>
         <img alt={'logo'} src="/logo.png" />
-        <span>AntD Admin</span>
+        {siderFold ? '' : <span>AntD Admin</span>}
       </div>
-      {<Menus />}
-
+      {<Menus {...menuProps} />}
     </div>
   );
 };

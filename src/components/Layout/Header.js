@@ -12,7 +12,7 @@ const content = (
   </div>
 );
 
-const Header = ({ isNavbar }) => {
+const Header = ({ isNavbar, switchSider }) => {
   return (
     // <div className={`${styles.header} aa`}>
     <div className={cs(styles.header, { aa: isNavbar })}>
@@ -22,7 +22,7 @@ const Header = ({ isNavbar }) => {
             <Icon type="bars" />
           </div>
         </Popover>
-        : <div className={styles.button}>
+        : <div className={styles.button} onClick={switchSider}>
           <Icon type="menu-unfold" />
         </div>
       }

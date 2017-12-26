@@ -5,6 +5,7 @@ export default {
   namespace: 'layout',
   state: {
     isNavbar: document.body.clientWidth < 769,
+    siderFold: window.localStorage.getItem('siderFold') === 'true',
   },
   subscriptions: {
     setup({ dispatch }) {
@@ -32,6 +33,13 @@ export default {
       return {
         ...state,
         isNavbar: payload,
+      };
+    },
+    switchSider(state) {
+      window.localStorage.setItem('siderFold', !state.siderFold);
+      return {
+        ...state,
+        siderFold: !state.siderFold,
       };
     },
   },

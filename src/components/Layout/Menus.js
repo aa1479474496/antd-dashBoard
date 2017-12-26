@@ -5,7 +5,7 @@ const SubMenu = Menu.SubMenu;
 
 class Menus extends Component {
   state = {
-    collapsed: false,
+    collapsed: true,
   }
   toggleCollapsed = () => {
     this.setState({

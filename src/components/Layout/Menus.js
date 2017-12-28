@@ -9,11 +9,31 @@ const SubMenu = Menu.SubMenu;
 //   console.log(item);
 // };
 
-const Menus = ({ siderFold }) => {
+const Menus = ({ siderFold, location }) => {
+  const { pathname } = location;
+
+
+  const getKeys = (name) => {
+    let defaultKeys;
+    switch (name) {
+      case '/dashboard':
+        defaultKeys = ['1'];
+        break;
+      case '/users':
+        defaultKeys = ['2'];
+        break;
+      default:
+        defaultKeys = ['1'];
+        break;
+    }
+    return defaultKeys;
+  };
+
+  const selectetKeys = getKeys(pathname);
   return (
     <div>
       <Menu
-        defaultSelectedKeys={['1']}
+        selectedKeys={selectetKeys}
         mode="inline"
         theme="light"
         inlineCollapsed={siderFold}

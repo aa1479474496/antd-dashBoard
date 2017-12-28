@@ -5,9 +5,10 @@ import cs from 'classnames';
 import Menus from './Menus';
 import styles from './index.less';
 
-const Sider = ({ siderFold }) => {
+const Sider = ({ siderFold, location }) => {
   const menuProps = {
     siderFold,
+    location,
   };
   return (
     <div className={cs(styles.sider, { [styles.fold]: siderFold })}>

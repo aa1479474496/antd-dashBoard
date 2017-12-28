@@ -6,9 +6,10 @@ import { Layout } from '../components';
 
 const { Header, Sider, styles } = Layout;
 
-const App = ({ children, layout, dispatch }) => {
+const App = ({ children, layout, dispatch, location }) => {
   const { isNavbar, siderFold } = layout;
   const headerProps = {
+    location,
     children,
     isNavbar,
     siderFold,
@@ -17,6 +18,7 @@ const App = ({ children, layout, dispatch }) => {
     },
   };
   const siderProps = {
+    location,
     siderFold,
   };
   return (
@@ -31,7 +33,7 @@ const App = ({ children, layout, dispatch }) => {
             { [styles.withnavbar]: isNavbar })}
       >
         <Header {...headerProps} />
-        <div className="content">
+        <div className={styles.content}>
           {children}
         </div>
       </div>

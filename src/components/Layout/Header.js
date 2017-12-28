@@ -13,8 +13,9 @@ import styles from './index.less';
 //   </div>
 // );
 
-const Header = ({ isNavbar, siderFold, switchSider }) => {
+const Header = ({ isNavbar, siderFold, switchSider, location }) => {
   const menuProps = {
+    location,
     siderFold: false,
   };
 

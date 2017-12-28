@@ -6,7 +6,7 @@ import { NumberCard } from './components';
 const DashBoard = ({ dashboard }) => {
   const { numbers } = dashboard;
   const numberCards = numbers.map((item, key) => (
-    <Col key={key} xl={6} lg={12}><NumberCard {...item} /></Col>
+    <Col key={key} lg={12} xl={6}><NumberCard {...item} /></Col>
   ));
 
   return (

@@ -56,7 +56,9 @@ const Menus = ({ siderFold, location }) => {
           <span>Posts</span>
         </Menu.Item>
         <SubMenu key="sub1" title={<span><Icon type="appstore" /><span>Charts</span></span>}>
-          <Menu.Item key="9">ECharts</Menu.Item>
+          <SubMenu key="9" title={<span><Icon type="appstore" /><span>Charts11</span></span>}>
+            <SubMenu key="10" title={<span><Icon type="appstore" /><span>Charts22</span></span>} />
+          </SubMenu>
         </SubMenu>
       </Menu>
     </div>

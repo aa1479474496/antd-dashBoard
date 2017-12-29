@@ -27,9 +27,16 @@ const dashboard = Mock.mock({
   ],
 });
 
+const test = Mock.mock({
+  ax: '1234567',
+});
+
 module.exports = {
   'GET /test/aaa': function (req, res) {
     res.status(200).json(dashboard);
+  },
+  'GET /axiostest': function (req, res) {
+    res.status(200).json(test);
   },
 
   'POST /api/users': function (req, res) {

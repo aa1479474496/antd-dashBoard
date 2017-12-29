@@ -1,4 +1,4 @@
-import { query } from '../services/dashboard';
+import { query, axtest } from '../services/dashboard';
 
 export default {
   namespace: 'dashboard',
@@ -18,6 +18,7 @@ export default {
       history.listen(({ pathname }) => {
         if (pathname === '/dashboard') {
           dispatch({ type: 'query' });
+          dispatch({ type: 'test' });
         }
       });
     },
@@ -32,6 +33,16 @@ export default {
         payload: data.data,
       });
     },
+    *test({
+      payload,
+    }, { call }) {
+      const data = yield call(axtest);
+      console.log(data.data);
+    },
+
+
   },
+
+
 }
 ;
